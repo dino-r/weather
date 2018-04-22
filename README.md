@@ -117,13 +117,13 @@ interface go to `Preferences -> Data Sources` and configure a data source as
 - Access: direct
 
 Then click `Save & Test`. Note that you can't enter the URL
-`http://localhost:9090` even though Grafana runs on the Raspberry Pi itself.
+`http://localhost:9090` even though Grafana runs on the Raspberry Pi.
 This is because the Grafana Server doesn't actually fetch the data from
 Prometheus itself. It only delivers a blob of JavaScript to your browser which
-not generates all the visualizations but also fetches the data to visualize.
+generates all the visualizations but also fetches the data to visualize.
 That means that the URL you type in as a data source must be the URL from which
 your computer can reach the Prometheus data source. From the perspective of
-your computer, `localhost` is just itself and not the Raspberry Pi.
+your computer, `localhost` is of course not the Raspberry Pi.
 
 With the data source configured, you can now go ahead and configure yourself a
 nice Dashboard with the collected metrics. Here's what I did:
