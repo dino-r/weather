@@ -94,10 +94,11 @@ Grafana supports Prometheus data sources out of the box, so all you have to do i
 - type: Prometheus
 - URL: `http://10.0.0.2:9090`
 - Access: direct
+
 Then click `Save & Test`. Note that you can't enter the URL `http://localhost:9090` even though Grafana runs on the Raspberry Pi itself. This is because the Grafana Server doesn't actually fetch the data from Prometheus itself. It only delivers a blob of JavaScript to your browser which not generates all the visualizations but also fetches the data to visualize. That means that the URL you type in as a data source must be the URL from which your computer can reach the Prometheus data source. From the perspective of your computer, `localhost` is just itself and not the Raspberry Pi.
 
 With the data source configured, you can now go ahead and configure yourself a nice Dashboard with the collected metrics. Here's what I did:
-![dashboard](http://github.com/dino-r/weather/dashboard.png)
+![dashboard](/dashboard.png)
 
 Finally, if you want others to have access, don't give them your admin credentials but simply create new users in the Grafana interface so that they create their own interfaces (or view your predefined ones).
 
