@@ -42,13 +42,13 @@ Now install Prometheus
 # apt-get install prometheus
 ```
 and configure it so that it uses the configuration file within this repository
-you can either overwrite /etc/prometheus/prometheus.yml with the configuration
-prometheus.yml from this repository or you can simply tell systemd to launch
+you can either overwrite `/etc/prometheus/prometheus.yml` with the configuration
+`prometheus.yml` from this repository or you can simply tell systemd to launch
 prometheus with the config file in this repo by adding the line
 ```
 ARGS="-config.file \"/path/to/repo/weather/prometheus.yml\" "
 ```
-to the file /etc/default/prometheus, where  /path/to/repo should be replaced by
+to the file `/etc/default/prometheus`, where  `/path/to/repo` should be replaced by
 -- duh -- the path to the repository.
 
 After that, enable and start the prometheus service
@@ -72,7 +72,7 @@ $ ./read_sensor.py /dev/hidraw0
 ```
 where the argument is the sensor device path (it should be the same in your
 case...?). If it crashes, you probably just need to install the missing python
-packages. Also, this works with python2.7. This script also spins up the web
+packages. Also, this works with `python2.7`. This script also spins up the web
 server that serves the data to Prometheus.
 
 In order to verify that the script runs, you can type `10.0.0.2:9110` into your
