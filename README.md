@@ -80,6 +80,17 @@ browser (or whatever the IP of your rasp is) and it will return your request
 with current sensor data. You should be able to find the CO2 level and the
 temperature in there.
 
+There is a minimal systemd service provided in the repo as `weather.service` for an automatic startup. Change the path in the line `ExecStart` to the path to `read_sensor.py`, then copy or symlink the file into `/etc/systemd/system/` and enable and start with
+```
+# systemctl enable weather.service
+# systemctl start weather.service
+```
+On the next reboot, the readout script should run automatically.
+
+Check the status of the readout script with
+```
+# systemctl status weather.service
+```
 
 ## Grafana
 Now everything that remains is the data visualization and we're going to use
@@ -88,7 +99,7 @@ Pi but you can get it [here](https://github.com/fg2it/grafana-on-raspberry)
 nonetheless. Pick the the armhf version for the Raspberry Pi.
 
 By default, Grafana is configured to start up a web server listening to port
-3000. If the weather service is the sole purpose of the Raspberry Pi, you can
+`3000`. If the weather service is the sole purpose of the Raspberry Pi, you can
 change it to the default http port 80 by editing the `http_port` line in the
 server section of the grafana configuration located at
 `/etc/grafana/grafana.ini`. Note that for ports below 1024, you need special

@@ -1,0 +1,10 @@
+[Unit]
+Description=Sensor Reading Daemon
+
+[Service]
+Type=simple
+ExecStart=/path/to/read_sensor.py /dev/hidraw0
+User=pi
+
+[Install]
+WantedBy=multi-user.target
