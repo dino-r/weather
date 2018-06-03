@@ -75,6 +75,8 @@ if __name__ == "__main__":
     REQUEST_CO2 = Gauge("co2_monitor_CO2", "CO2 level in ppm")
     start_http_server(9110)
 
+    # wait for the sensor a bit until we start reading
+    time.sleep(60)
     while True:
         monitor.read()
         #print("temperature: {}C,   CO2: {}ppm".format(monitor.temperature, monitor.co2))
