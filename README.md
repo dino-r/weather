@@ -1,5 +1,7 @@
 # What?
-It's a weather station that collects sensor data but also spins up a web sever that lets you look at the time series data from everywhere you want.
+It's a weather station that collects sensor data but also spins up a web sever that lets you look at the time series data from everywhere you want. Here's an example:
+![dashboard](/dashboard.png)
+
 
 Hardware you need
 - Raspberry Pi (and, you know, micro SD card and power supply. Maybe even an Ethernet cable.)
@@ -137,8 +139,7 @@ your computer can reach the Prometheus data source. From the perspective of
 your computer, `localhost` is of course not the Raspberry Pi.
 
 With the data source configured, you can now go ahead and configure yourself a
-nice Dashboard with the collected metrics. Here's what I did:
-![dashboard](/dashboard.png)
+nice Dashboard with the collected metrics. 
 
 Finally, if you want others to have access, don't give them your admin
 credentials but simply create new users in the Grafana interface so that they
